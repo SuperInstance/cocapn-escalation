@@ -1,0 +1,16 @@
+[package]
+name = "cocapn-escalation"
+version = "0.1.0"
+license = "MIT"
+edition = "2021"
+
+[dependencies]
+serde = { version = "1", features = ["derive"], optional = true }
+thiserror = "1"
+log = "0.4"
+chrono = { version = "0.4", features = ["serde"] }
+cocapn-core = { path = "/tmp/cocapn-core" }
+
+[features]
+default = []
+serde = ["dep:serde", "chrono/serde"]
